@@ -2,6 +2,7 @@ from fastapi import FastAPI
 import uvicorn
 from config.prsma_config import connect_prisma, disconnect_prisma
 from routers.user_router import router as user_router
+from routers.product_router import router as product_router
 
 
 app = FastAPI()
@@ -24,6 +25,7 @@ async def root():
 
 # routers
 app.include_router(user_router)
+app.include_router(product_router)
 
 
 if __name__ == "__main__":
